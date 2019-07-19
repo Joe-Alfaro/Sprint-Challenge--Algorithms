@@ -105,26 +105,16 @@ class SortingRobot:
                 if self.compare_item() < 0:#if item in my hand is less than item in front of me
                     self.swap_item()#swap so item in my hand is bigger than before
                     self.set_light_on()#confirm I've made a swap
-            #if self.compare_item() is None:#if none made it until the end of the line
-            #    self.swap_item() #swap it out so None isn't in the lise
-            #    return #be done
             while self.compare_item() is not None:
                 if self.compare_item() > 0:#if the item in my had is bigger than the one in front of me
                     self.swap_item()#swap so the smallest item is in my hand 
                     self.set_light_on()#confirm I've made a swap
                 self.move_left()#move left
-            self.swap_item()
-            if self.light_is_on(): 
+            self.swap_item() #remove none from list
+            if self.light_is_on(): #if swaps were made 
                 self.move_right() 
-                self.swap_item()
-        #self.swap_item()#make swap of none with the smallest thing in the list so none is in my hands
-            #don't turn light on, if it's not on yet this is the final swap
-        '''
-            if self.light_is_on():#if a swap was made
-                self.move_right()#move to the right
-                self.swap_item()#dump none 
-        '''
-
+                self.swap_item()#put none back in list
+        print(self._time)
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
