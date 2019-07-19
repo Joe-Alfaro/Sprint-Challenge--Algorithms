@@ -18,4 +18,5 @@ c)  O(n) calling the function recursively is still a linear run time.
 Start on the middle floor and drop the egg
   if egg breaks adjust the scope of floors to be tested to that floor and below
 Repeat until egg doesn't break
-  _f_ is that floor plus one
+  if the number of floors to be tested is 3 or 1 _f_ is that floor plus one
+  else keep repeating
