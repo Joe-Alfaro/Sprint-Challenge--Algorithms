@@ -1,15 +1,15 @@
 ## Exercise I
 
 ```
-a) O(n)
+a) O(n) since it doesn't matter what the amount is only that the calculation runtime is linear, that is it only runs through one time.
 ```
 
 ```
-b) O(n^4)
+b) O(n^4) the first loop is O(n) and every nested loop adds and exponent to that so since there are three nested loop the exponent is four.
 ```
 
 ```
-c)  O(n)
+c)  O(n) calling the function recursively is still a linear run time.
 ```
 
 ## Excercise II
