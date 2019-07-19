@@ -114,7 +114,6 @@ class SortingRobot:
             if self.light_is_on(): #if swaps were made 
                 self.move_right() 
                 self.swap_item()#put none back in list
-        print(self._time)
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
@@ -126,3 +125,4 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+    print(robot._time)
