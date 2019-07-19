@@ -58,7 +58,7 @@ class SortingRobot:
         self._time += 1
         # Swap the held item with the list item at the robot's position
         self._item, self._list[self._position] = self._list[self._position], self._item
-
+    
     def compare_item(self):
         """
         Compare the held item with the item in front of the robot:
@@ -96,8 +96,32 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        self.swap_item()#dump none
+        self.set_light_on()#start while loop
+        while self.light_is_on():#while a swap was made
+            self.set_light_off()#don't assume a swap will be made
+            while self.can_move_right():#if not at the end of the line
+                self.move_right()#move right
+                if self.compare_item() < 0:#if item in my hand is less than item in front of me
+                    self.swap_item()#swap so item in my hand is bigger than before
+                    self.set_light_on()#confirm I've made a swap
+            if self.compare_item() is None:#if none made it until the end of the line
+                self.swap_item() #swap it out so None isn't in the lise
+                return #be done
+            elif self.compare_item() > 0:#At end of line if the thing in my hand is bigger it is the biggest thing
+                self.swap_item()#swap so item in my hand is put in the last place since it is the biggest thing
+            self.move_left()#start heading back
+            while self.compare_item() is not None:
+                if self.compare_item() > 0:#if the item in my had is bigger than the one in front of me
+                    self.swap_item()#swap so the smallest item is in my hand 
+                    self.set_light_on()#confirm I've made a swap
+                self.move_left()#move left
+            
+            self.swap_item()#make swap of none with the smallest thing in the list so none is in my hands
+            #don't turn light on, if it's not on yet this is the final swap
+            if self.light_is_on():#if a swap was made
+                self.move_right()#move to the right
+                self.swap_item()#dump none 
 
 
 if __name__ == "__main__":
