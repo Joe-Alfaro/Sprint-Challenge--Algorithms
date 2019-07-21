@@ -7,7 +7,7 @@ a) O(n) since it doesn't matter what the amount is only that the calculation run
 
 
 ```
-b) O(n^4) the first loop is O(n) and every nested loop adds and exponent to that so since there are three nested loop the exponent is four.
+b) O(n^3) the first loop is O(n) and every nested loop adds and exponent to that so since there are three nested loop and the last one is a constant so the exponent is three.
 ```
 
 ```
